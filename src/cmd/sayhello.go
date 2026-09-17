@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Hellow World!")
+	name := flag.String("name", "World", "name to greet")
+	flag.Parse()
+
+	fmt.Printf("Hello %s!\n", *name)
 }
